@@ -87,4 +87,8 @@ public class OrderDaoMem {
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    public void removeInstance() {
+        instance = null;
+    }
 }
