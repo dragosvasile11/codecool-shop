@@ -26,4 +26,24 @@ public class CartItem {
     public int getItemPrice() {
         return itemPrice;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPiece(int piece) {
+        this.piece = piece;
+    }
+
+    public void setSumItemPrice(int sumItemPrice) {
+        this.sumItemPrice = sumItemPrice;
+    }
+
+    public void setItemPrice(int itemPrice) {
+        this.itemPrice = itemPrice;
+    }
 }
