@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module" src="../../static/js/fillModal.js"></script>
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="copy">
+  <div class="modal fade" id="modalBasket" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header py-4">
+          <h5 class="mb-0">Items in your cart:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="item-container" class="modal-body mx-3 pt-4 pb-0">
+
+          <div id="current-item-container">
+          </div>
+          <div id="total-amount">
+            <div id="total-amount-number">Total amount: 0 $</div>
+          </div>
+          <hr>
+
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="#!" type="button" class="card-link-secondary small text-uppercase close" data-dismiss="modal" aria-label="close">Continue shopping</a>
+            <button type="button" class="btn btn-primary"
+            onclick="window.location.href='/checkout'">Checkout!</button>
+          </div>
+          <hr>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
