@@ -1,3 +1,76 @@
+
+#footer {
+    background-color: gray;
+    color: black;
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-color: #999999;
+    box-shadow: 5px 5px 8px #999999;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+.btn-primary, .add-to-cart, .order-button {
+    background-color: #e8c500;
+    border-color: #ffe968;
+    color: black;
+    box-shadow: none;
+}
+
+.add-to-cart:hover, .add-to-cart:active,
+.order-button:hover {
+    background-color: black;
+    color: #e8c500;
+    border-color: #ffe968;
+}
+
+
+/* Navbar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+/* End Navbar */
+
 .glyphicon {
     margin-right:5px;
 }
@@ -60,35 +133,3 @@
 {
     margin: 0 0 11px;
 }
-
-/* Navbar */
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #04AA6D;
-}
-
-/* End Navbar */
