@@ -39,4 +39,14 @@ function fieldLog() {
 }
 
 
+function fieldChecker() {
+    let allOkay = true;
+    for (let field of requiredFields) {
+        if (field.value.length === 0) {
+            allOkay = false;
+        }
+    }
+    return allOkay;
+}
+
 
