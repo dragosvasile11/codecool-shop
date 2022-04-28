@@ -73,6 +73,19 @@ async function checkoutButtonHandler(e) {
     }
 }
 
+async function apiGet(url, payload, queryArgument) {
+    let response = await fetch(`${url}?${queryArgument}=${payload}`, {
+        method: 'GET',
+    })
+}
 
+async function getCart() {
+    let response = await fetch("/api/session/get", {
+        method: 'GET',
+    })
+    if (response.status === 200) {
+        return response.json()
+    }
+}
 
 
