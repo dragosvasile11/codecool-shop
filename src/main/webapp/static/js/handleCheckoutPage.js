@@ -12,4 +12,17 @@ for (let field of requiredFields) {
 checkoutButton.addEventListener("click", checkoutButtonHandler);
 getTotalPrice().then(() => {return null;});
 
+let logOutput = [];
+let orderOutput = [];
+let orderId = document.getElementsByClassName("orderId")[0].id;
+orderOutput.push("Order ID: " + orderId);
+localStorage.setItem("orderId", orderId);
+
+getCart().then(data => {console.log(data);});
+
+
+function fieldHandler(e) {
+    logOutput.push(`${e.target.id} input occurred`);
+}
+
 
