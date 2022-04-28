@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script type="module" src="../../static/js/handleCheckoutPage.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/checkoutPage.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+<div class="col-md-4 container bg-default">
+
+    <h4 class="my-4">
+        Billing Address
+    </h4>
+
+    <form action="order_confirmation.html">
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" class="form-control" id="first-name" placeholder="First Name" required>
+                <div class="invalid-feedback">
+                    Valid first name is required.
+                </div>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main Street" required>
+            <div class="invalid-feedback">
+                Please enter your shipping address.
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label for="country">Country</label>
+                <select type="text" class="form-control" id="country">
+                    <option value>Choose...</option>
+                    <option>Romania</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid country.
+                </div>
+            </div>
+
+            <div class="col-md-4 form-group">
+                <label for="city">City</label>
+                <select type="text" class="form-control" id="city">
+                    <option value>Choose...</option>
+                    <option>Bucharest</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please provide a valid city.
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <hr>
+
+        <h4 class="mb-4">Payment</h4>
+
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="credit" name="payment-method" checked required>
+            <label for="credit" class="form-check-label">Credit Card</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="debit" name="payment-method" required>
+            <label for="debit" class="form-check-label">Paypal</label>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 form-group">
+                <label for="card-name">Name on card</label>
+                <input type="text" class="form-control" id="card-name" placeholder required>
+                <div class="invalid-feedback">
+                    Name on card is required
+                </div>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" class="form-control" id="card-number" placeholder required>
+                <div class="invalid-feedback">
+                    Credit card number is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-5 form-group">
+                <label for="expire-date">Expire Date</label>
+                <input type="text" class="form-control" id="expire-date" placeholder required>
+                <div class="invalid-feedback">
+                    Expiration date required
+                </div>
+            </div>
+
+
+            <div class="col-md-5 form-group">
+                <label for="security-number">Security Number</label>
+                <input type="text" class="form-control" id="security-number" placeholder required>
+                <div class="invalid-feedback">
+                    Security code required
+                </div>
+            </div>
+        </div>
+
+
+        <div id="total-amount">
+            <div id="total-amount-number">Total amount: 0 $</div>
+        </div>
+        <img id="credit-cards" src="../../static/img/creditCardAcceptance.png" alt="accepted credit cards">
+
+        <hr class="mb-4">
+
+        <button class="btn btn-primary bt-lg btn-block" type="submit">Confirm</button>
+    </form>
+</div>
+<p hidden th:id="${orderId}" class="orderId">
+</body>
+</html>

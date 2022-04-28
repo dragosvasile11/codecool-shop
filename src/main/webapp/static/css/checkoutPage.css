@@ -1,0 +1,30 @@
+body {
+    background-color: #F8F9FA;
+    margin-top: 1%;
+}
+
+.btn-block {
+    background-color: #e8c500;
+    border-color: #ffe968;
+    color: black;
+    box-shadow: none;
+}
+
+.btn-block:hover {
+    background-color: black;
+    color: #e8c500;
+    border-color: #ffe968;
+}
+
+
+#credit-cards {
+    height: 100px;
+    margin-top: -97%;
+    margin-left: 50%;
+}
+
+#total-amount {
+    margin-top: 15px;
+    margin-bottom: -5px;
+    font-size: large;
+}
