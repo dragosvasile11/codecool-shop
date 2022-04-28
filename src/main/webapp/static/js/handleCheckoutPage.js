@@ -49,4 +49,30 @@ function fieldChecker() {
     return allOkay;
 }
 
+async function checkoutButtonHandler(e) {
+    fieldLog();
+    apiGet("http://0.0.0.0:8080/api/adminlog", logOutput, "logoutput");
+    if (fieldChecker()) {
+        await getCart().then(data =>  {
+            console.log(data);
+            let customerEmail = document.getElementById("email").value;
+            orderOutput.push("Customer email address: " + customerEmail);
+            for (let item of data) {
+                orderOutput.push("Ordered item and amount: " + item['name'] + " " + item['amount']);
+            }
+            let totalSum = 0;
+            for (let item of data) {
+                totalSum += parseFloat(item['defaultPrice']) * parseFloat(item['amount']);
+            }
+            console.log(totalSum + "adsadsa")
+            orderOutput.push("Total amount: " + totalSum + " USD");
+            return null;
+        })
+        apiGet("http://0.0.0.0:8080/api/order", orderOutput, "order");
+        window.location.href="http://0.0.0.0:8080/order_confirmation";
+    }
+}
+
+
+
 
