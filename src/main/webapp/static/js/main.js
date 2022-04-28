@@ -11,11 +11,11 @@ function openCheckoutPage() {
 
 }
 
-const els = document.getElementsByClassName("btn btn-success");
-console.log(els);
+const addToCartButtons = document.getElementsByClassName("btn btn-success");
+console.log(addToCartButtons);
 
-for (let el of els) {
-    el.addEventListener("click", addItem);
+for (let addToCartButton of addToCartButtons) {
+    addToCartButton.addEventListener("click", addItem);
     function addItem() {
         let cartNumberOfItems = document.getElementById("itemsNumberInCart").innerHTML;
         let numberAsInteger = parseInt(cartNumberOfItems.slice(1, cartNumberOfItems.length - 1));
