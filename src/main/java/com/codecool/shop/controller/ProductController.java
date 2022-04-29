@@ -33,23 +33,19 @@ public class ProductController extends HttpServlet {
 
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
-        context.setVariable("category", productService.getProductCategory(1));
-        context.setVariable("products", productService.getAllProducts());
-        context.setVariable("allCategory", productCategoryDataStore.getAll());
-        context.setVariable("allSuppliers", supplierDaoMem.getAll());
-        //Hashtable<String, Integer> cart = new Hashtable<>();
 
-        /*
-        ShoppingCart shoppingCart = new ShoppingCart();
-        req.getSession().setAttribute("cart", shoppingCart);
-         */
+        context.setVariable("categoryNames", productCategoryDataStore.getIdsAndNames());
 
-
-        // // Alternative setting of the template context
-        // Map<String, Object> params = new HashMap<>();
-        // params.put("category", productCategoryDataStore.find(1));
-        // params.put("products", productDataStore.getBy(productCategoryDataStore.find(1)));
-        // context.setVariables(params);
+        if (req.getParameter("categoryId") != null) {
+            int categoryId = Integer.parseInt(req.getParameter("categoryId"));
+            context.setVariable("currentCategory", productService.getProductCategory(categoryId).getName());
+            context.setVariable("products", productService.getProductsForCategory(categoryId));
+        } else {
+            context.setVariable("currentCategory", "All products");
+            context.setVariable("products", productService.getAllProducts());
+            context.setVariable("allCategory", productCategoryDataStore.getAll());
+            context.setVariable("allSuppliers", supplierDaoMem.getAll());
+        }
         engine.process("product/index.html", context, resp.getWriter());
     }
 }
