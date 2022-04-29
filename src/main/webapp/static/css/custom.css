@@ -12,16 +12,16 @@
     box-shadow: 5px 5px 8px #999999;
 }
 
-.img-hover-zoom {
-    overflow: hidden;
+@media (hover: hover) and (pointer: fine) {
+    .card {
+        transition: transform .5s ease;
+    }
 }
 
-.img-hover-zoom img {
-    transition: transform .5s ease;
-}
-
-.img-hover-zoom:hover img {
-    transform: scale(1.5);
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        transform: scale(1.2);
+    }
 }
 
 .btn-primary, .add-to-cart, .order-button {
