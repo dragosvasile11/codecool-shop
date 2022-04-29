@@ -135,3 +135,7 @@ li a:hover:not(.active) {
 {
     margin: 0 0 11px;
 }
+
+img {
+    width: 100%;
+}
