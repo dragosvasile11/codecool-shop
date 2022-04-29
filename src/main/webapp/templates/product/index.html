@@ -31,9 +31,24 @@
 
     <script type="module" src="../../static/js/controller.js"></script>
 
+<!--    sideNav-->
+    <script src="/static/js/sideNav.js" defer></script>
+    <link rel="stylesheet" href="/static/css/sideNav.css">
+<!--    sideNav-->
+
 </head>
 
 <body>
+
+    <div id="sideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">All Categories</a>
+        <div th:each="category,iterStat : ${categoryNames}">
+            <a th:attr="href='/?categoryId=' + ${category.key}" th:text="${category.value}">Category name</a>
+        </div>
+    </div>
+
+<div id="main">
 <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">News</a></li>
