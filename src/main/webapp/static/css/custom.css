@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.card img {
+    width: 100%;
+}
+
 .card {
     margin-bottom: 15px;
     margin-top: 15px;
@@ -135,8 +139,4 @@ li a:hover:not(.active) {
 .list-group-item-text
 {
     margin: 0 0 11px;
-}
-
-img {
-    width: 100%;
 }
